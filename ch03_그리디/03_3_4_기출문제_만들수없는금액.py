@@ -1,8 +1,10 @@
+# 교재 풀이
 n = int(input())
 coin_type = list(map(int, input().split()))
 coin_type.sort()
 answer = 1
 
+# 왜 이 과정 거치면 답인지 이해 안 됨...
 for x in coin_type:
     if answer < x:
         break
@@ -12,9 +14,8 @@ for x in coin_type:
 print(answer)
 
 
-
-
-# 내가 생각한 답안 -> 틀림 -> last 값이 계속 0으로 됨, 두번째 for-loop가 제대로 안 돌아감
+# 1차 풀이 : 틀림
+# -> last 값이 계속 0으로 됨, 두번째 for-loop가 제대로 안 돌아감
 def findAnswer():
     n = int(input())
     coin_type = list(map(int, input().split()))

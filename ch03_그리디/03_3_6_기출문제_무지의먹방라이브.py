@@ -1,4 +1,8 @@
 def solution(food_times, k):
+    # 틀린 이유 : -1 반환하는 케이스
+    if sum(food_times) <= k:
+        return -1
+    
     answer = 0
     arr = []
     for i in range(len(food_times)):
@@ -18,9 +22,6 @@ def solution(food_times, k):
         while arr[-1][1] == min_value:
             del arr[-1]
             length -= 1
-        # 더 이상 먹을 것이 없는 경우
-        if length <= 0:
-            return -1
         
     arr.sort(key=lambda x: x[0])
     
