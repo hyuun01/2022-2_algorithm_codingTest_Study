@@ -1,19 +1,20 @@
-# 교재 풀이
 n = int(input())
 coin_type = list(map(int, input().split()))
 coin_type.sort()
-answer = 1
 
-# 왜 이 과정 거치면 답인지 이해 안 됨...
+# sum = (c_1 + c_2 + ... + c_n-1) 까지는 만들 수 있다 
+# -> sum >= c_n 이면 c_1 + ... + c_n까지는 만들 수 있다.
+sum = 0
 for x in coin_type:
-    if answer < x:
+    if sum < x:
         break
     else:
-        answer += x
-
+        sum += x
+        
+answer = sum + 1
 print(answer)
 
-
+'''
 # 1차 풀이 : 틀림
 # -> last 값이 계속 0으로 됨, 두번째 for-loop가 제대로 안 돌아감
 def findAnswer():
@@ -40,4 +41,4 @@ def findAnswer():
 
     
     print(answer)
-    
+'''
