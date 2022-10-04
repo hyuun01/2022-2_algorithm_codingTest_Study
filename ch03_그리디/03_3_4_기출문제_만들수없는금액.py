@@ -2,9 +2,16 @@ n = int(input())
 coin_type = list(map(int, input().split()))
 coin_type.sort()
 
+# 1
+
+# [1, 1, 1||||, 5, 8]
+# sum = 3 < 5
+# 3, 4, 5, 6, 7
+
+
 # sum = (c_1 + c_2 + ... + c_n-1) 까지는 만들 수 있다 
 # -> sum >= c_n 이면 c_1 + ... + c_n까지는 만들 수 있다.
-sum = 0
+sum = 1
 for x in coin_type:
     if sum < x:
         break
@@ -13,6 +20,20 @@ for x in coin_type:
         
 answer = sum + 1
 print(answer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 '''
 # 1차 풀이 : 틀림
